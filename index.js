@@ -1,9 +1,13 @@
 const express = require("express")
+const projectsRouter = require("./projects-router")
+
 
 const server = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8000
 
 server.use(express.json())
+
+server.use(projectsRouter)
 
 server.use((err, req, res, next) => {
 	console.log(err)
